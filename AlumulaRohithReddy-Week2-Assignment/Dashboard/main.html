@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insurance Dashboard</title>
+<link href=
+"https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" 
+        rel="stylesheet">
+</head>
+
+<body class="bg-white">
+<header class="sticky top-0 bg-indigo-400 text-white p-3 flex justify-between border-b-4">
+  <a href="#"><img src="The_Hartford_Financial_Services_Group_logo.svg" alt="logo" class="h-34 w-20 ml-4"/></a>
+  <div>
+  <h1 class="text-3xl text-black font-bold">Hartford Insurance</h1>
+  <p class="text-black text-xl">Insurance that cares.</p>
+  </div>  
+</header>
+<section class="p-10 text-center bg-white">
+  <h2 class="text-4xl font-bold">Trusted protection for every stage of life.</h2>
+  <p class="mt-4 text-xl font-bold">Secure today, confident tomorrow.</p>
+  <button class="mt-4 bg-indigo-600 text-white px-6 py-2 rounded-2 hover:bg-blue-700">
+    <a href="#formsec"> Get Started </a>
+  </button>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 ">
+    <div class="bg-indigo-400 h-20 p-4 rounded flex justify-center items-center text-xl"><b>Customers: <span id="totalcust">0</span></b></div>
+    <div class="bg-indigo-400 h-20 p-4 rounded flex justify-center items-center text-xl"><b>Policies: 3</b></div>
+    <div class="bg-indigo-400 h-20 p-4 rounded flex justify-center items-center text-xl"><b>Total Premium: ₹<span id="totalpremium">0</span></b></div>
+  </div>
+</section>
+<section class="p-8">
+<h2 class="text-2xl font-bold mb-4">Insurance Plans</h2>
+<div id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+</section>
+<section class="p-8 bg-white" id="formsec">
+<h2 class="text-xl font-bold mb-4">Customer Enquiry</h2>
+<form id="form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <input id="name" placeholder="Name" class="border p-2" />
+  <input id="age" type="number" placeholder="Age" class="border p-2" />
+  <input id="email" placeholder="Email" class="border p-2" />
+  <select id="policy" class="border p-2">
+    <option>Health</option>
+    <option>Life</option>
+    <option>Vehicle</option>
+  </select>
+  <input id="coverage" type="range" min="1" max="10" value="1" class="col-span-2"/>
+  <span id="covervalue">Coverage: 1L</span>
+  <button class="bg-indigo-600 text-white p-2 col-span-2">Submit</button>
+</form>
+<p id="error" class="text-red-500 mt-2"></p>
+</section>
+<section class="p-8">
+  <div class="flex gap-4 mb-4">
+    <select id="filter" class="border p-2">
+      <option>All</option>
+      <option>Health</option>
+      <option>Life</option>
+      <option>Vehicle</option>
+    </select>
+    <input id="search" placeholder="Search name" class="border p-2">
+  </div>
+<table class="w-full bg-white">
+<thead class="bg-indigo-500 text-white">
+<tr>
+<th>Name</th><th>Age</th><th>Policy</th><th>Coverage</th><th>Premium</th>
+</tr>
+</thead>
+<tbody id="table"></tbody>
+</table>
+</section>
+<script src="main.js"></script>
+</body>
+</html>

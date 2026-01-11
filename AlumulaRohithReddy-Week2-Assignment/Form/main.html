@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Insurance Enquiry & Feedback</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="subheading">Enquiry & Feedback Form</h1>
+        <p>Submit your policy-related queries, claims, and feedback through form</p>
+        <div id="contact" class="contact">
+    <form class="form" id="form">
+    <label for="name">Full Name</label>
+    <input id="name" type="text" placeholder="Enter your name"  required/>
+    <p class="errormsg" id="nameerror"></p>
+    <label for="mail">Email</label>
+    <input id="mail" type="email" placeholder="Enter your email" required/>
+    <p class="errormsg" id="mailerror"></p>
+    <label for="number">Phone Number</label>
+    <input id="number" type="tel" placeholder="Enter your phone number" required/>
+    <p class="errormsg" id="numerror"></p>
+    <label for="request">Request Type</label>
+    <select id="request" required>
+      <option>Select Request Type</option>
+      <option>Policy Enquiry</option>
+      <option>Claim Related</option>
+      <option>Feedback</option>
+    </select>
+    <p class="errormsg" id="reqerror"></p>
+    <label for="policy">Policy Type</label>
+    <select id="policy" required>
+      <option>Select Policy</option>
+      <option>Health Insurance</option>
+      <option>Home Insurance</option>
+      <option>Vehicle Insurance</option>
+      <option>Life Insurance</option>
+    </select>
+    <p class="errormsg" id="polerror"></p>
+    <label for="message">Message</label>
+    <textarea id="message" rows="4" required></textarea>
+    <p class="errormsg" id="msgerror"></p>
+    <label for="rate">Rate Your Experience</label>
+    <div class="radio">
+    <div class="rating"><input type="radio" id="rate1" name="rating" value="1"> <h2>1</h2></div>
+    <div class="rating"><input type="radio" id="rate2" name="rating" value="2"> <h2>2</h2></div>
+    <div class="rating"><input type="radio" id="rate3" name="rating" value="3"> <h2>3</h2></div>
+    <div class="rating"><input type="radio" id="rate4" name="rating" value="4"> <h2>4</h2></div>
+    <div class="rating"><input type="radio" id="rate5" name="rating" value="5"> <h2>5</h2></div>
+    </div>
+    <p class="errormsg" id="ratingerror"></p>
+    <button type="submit">Submit</button>
+    <p class="sucmsg" id="successmsg"></p>
+  </form>
+</div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
