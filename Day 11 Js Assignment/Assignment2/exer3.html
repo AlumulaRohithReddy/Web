@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Dashboard</title>
+</head>
+<body>
+<div id="policy" style="border-style: solid; width: 300px;text-align: center;">
+<h3>Health Insurance</h3>
+<button id="delete">Delete</button>
+</div>
+<script>
+let pol= document.getElementById("policy")
+let delbtn = document.getElementById("delete")
+pol.addEventListener("click", () => {
+    console.log("Navigating to details page")
+})
+delbtn.addEventListener("click", (event) => {
+event.stopPropagation();
+console.log("Policy deleted")
+})
+</script>
+</body>
+</html>

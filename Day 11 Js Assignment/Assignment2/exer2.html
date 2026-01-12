@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initialscale=1.0" />
+ <title> Insurance payment page</title>
+ </head>
+ <body>
+ <div id="container" style="text-align: center;">
+    <h2>Policy Details</h2>
+    <button id="btn">View Details</button>
+</div>
+
+ <script>
+ let p=document.getElementById("container")
+ let c=document.getElementById('btn')
+ p.addEventListener("click", () => {
+ console.log("User validation is done and allowed")
+ },true)
+ c.addEventListener("click", (event) => {
+ console.log("Policy details")
+ },true)
+ </script>
+ </body>
+</html>

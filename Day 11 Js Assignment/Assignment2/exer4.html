@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Claims Dashboard</title>
+</head>
+<body>
+<div id="claims" style="display: flex;flex-direction:column;align-items: center;">
+<h1 style="text-align: center;">Claims Panel</h1>
+<div id="row" style="text-align: center; border-style: solid; width: 300px;">
+    <h2>ClaimId 2618 – Vehicle Damage</h2>
+    <br/>
+    <button id="btn">Approve Claim</button>
+</div>
+</div>
+<script>
+let panel = document.getElementById("claims")
+let row = document.getElementById("row")
+let btn = document.getElementById("btn")
+panel.addEventListener('click', ()=>{
+    console.log("validating details")
+},true)
+row.addEventListener("click", () => {
+    console.log("Opening Claim Details")
+})
+btn.addEventListener("click", (e) => {
+    e.stopPropagation(); 
+    console.log("Claim Approved")
+})
+</script>
+</body>
+</html>
