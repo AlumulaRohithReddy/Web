@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   /* TASK 2: CSS Not Applying  */
+.msg {
+ color :blue;
+ font-size: 20px;
+}
+/* TASK 6: CSS Layout Breaking */
+.card {
+ width: 300px;
+ padding: 20px;
+ }
+ /* TASK 8: Hidden Element Still Taking Space (CSS) */
+ .alert {
+ display: none;
+ }
+</style>
+</head>
+<body>
+<!-- TASK 1: Form Not Submiƫng (HTML + JS) -->
+<form id="userForm">
+ <input type="text" id="username">
+ <button onClick="validate()">Submit</button>
+</form>
+<!-- TASK 2: CSS Not Applying -->
+<p class="msg">Hello User</p>
+
+<!-- TASK 3: Buton Click Not Working (JS + DOM) -->
+ <button id="btn">Click Me</button><br/>
+
+ <!-- TASK 5: Input Value Always Empty -->
+<input type="text" id="email">
+<button onclick="check()">Check</button>
+<br/>
+<!-- TASK 10: Checkbox Validation -->
+<input type="checkbox" id="terms"/>
+<button onclick="submitForm()">Submit</button><br/>
+
+<!-- TASK 11: Assignment instead of comparison -->
+<input type="text" id="mobile" />
+<button onclick="validate()">Submit</button><br/>
+
+
+<!-- TASK 12: Policy Holder Name Validation -->
+<input type="text" id="policyName">
+<button onclick="validateName()">Submit</button><br/>
+
+<!-- TASK 13: Insurance Plan Dropdown Validation -->
+<select id="plan">
+ <option>Select Plan</option>
+ <option>Health</option>
+ <option>Life</option>
+</select>
+<button onclick="checkPlan()">Apply</button>
+
+<p id="policy"></p>
+<p id="list"></p>
+ <script>
+// TASK 18: Premium Amount Validation
+let premium = "5000";
+if (isNaN(Number(premium))) {
+console.log("Invalid premium");
+} else {
+ console.log("Valid premium");
+} 
+
+// TASK 17: Policy List Rendering Bug
+let policies = ["Life", "Health", "Vehicle"];
+policies.forEach(function (policy) {
+ document.getElementById("list").innerHTML += policy+"<br/>";
+}); 
+
+// TASK 16: Policy Type Comparison Error
+let policyType = "Health";
+if (policyType.toLowerCase() === "health") {
+console.log("Health Policy");
+} 
+// TASK 15: Claim Amount Validation
+
+let claimAmount = "abc";
+if (!isNaN(Number(claimAmount))) {
+alert("Valid claim");
+ } else {alert("Invalid claim");
+ }
+
+// TASK 14: Policy Number Display Bug
+let policyNumber = 123456;
+document.getElementById("policy").innerHTML = policyNumber; 
+
+// TASK 13: Insurance Plan Dropdown Validation
+ function checkPlan() {
+ let plan = document.getElementById("plan").value;
+ if ((plan === "Select Plan")) {
+ alert("Please choose a plan");
+ }
+ } 
+// TASK 12: Policy Holder Name Validation
+function validateName() {
+ let name = document.getElementById("policyName").value;
+ if (name === "") {
+ alert("Policy holder name required");
+ }
+}
+// TASK 11: Assignment instead of comparison
+ function validate() {
+ let mobile = document.getElementById("mobile").value;
+ if ((mobile.length ===  10)) {
+ alert("Valid");
+ } else {
+ alert("Invalid");
+ }
+ } 
+//  TASK 10: Checkbox Validation
+function submitForm() {
+ if (terms.checked) {
+ alert("Accept terms");
+ }
+} 
+
+// TASK 5: Input Value Always Empty
+function check() {
+ let email = document.getElementById("email").value;
+ if (email === "") {
+ alert("Email required");
+ }
+} 
+function validate() {
+ let name = document.getElementById("username").value;
+ if (name === "") {
+ alert("Name required");
+ }
+}
+// TASK 3: Buton Click Not Working (JS + DOM) 
+document.getElementById("btn").onclick = function () {
+ alert("Clicked");
+}; 
+
+// TASK 4: Validation Logic Error
+let age = 16;
+if (age >= 18) {
+ console.log("Eligible");
+} else if (age < 18) {
+ console.log("Not Eligible");
+}
+//  TASK 7: Password Match Validation
+let pwd = "admin123";
+let confirmPwd = "admin123 ";
+if (pwd === confirmPwd.trim()) {
+ console.log("Match");
+} else {console.log("Mismatch");
+ }
+
+// TASK 9: JS Error Stops Script
+console.log("Start");
+alert("Hello")
+console.log("End");
+</script>
+</body>
+</html>

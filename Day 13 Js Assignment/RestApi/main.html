@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><link href=
+"https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" 
+        rel="stylesheet">
+</head>
+<body class="bg-white">
+<header class="sticky top-0 bg-indigo-400 text-white p-3 flex justify-between border-b-4">
+  <a href="#"><img src="The_Hartford_Financial_Services_Group_logo.svg" alt="logo" class="h-34 w-20 ml-4"/></a>
+  <div>
+  <h1 class="text-3xl text-black font-bold">Hartford Insurance</h1>
+  <p class="text-black text-xl">Insurance that cares.</p>
+  </div>  
+</header>
+    <div  class="flex  flex-col justify-between items-center">
+        <select id="type" style="width: 100px;">
+            <option value="All">All</option>
+            <option value="Life">Life</option>
+            <option value="Health">Health</option>
+            <option value="Vehicle">Vehicle</option>
+        </select>
+        <ul id="policies" style="display: flex;align-items: center; flex-wrap:wrap;justify-content:space-between;"></ul>
+        <h1 id="main" class="text-2xl font-bold"></h1>
+        <div class="flex flex-row justify-center items-center  border-1 rounded-2xl border-black shadow-xl shadow-grey">
+        <div id="contact" class="bg-indigo-400 flex flex-col items-center pl-3 m-2  border-1 rounded-2xl">
+        <h1 class="text-xl font-bold mt-2">Add A Policy</h1>
+        <form class="w-72 block" id="form">
+        <label class="text-md font-bold mt-2" for="name">Policy Name</label>
+        <input id="name" type="text" placeholder="Enter Policy name"  required class="border-2 border-black"/><br/>
+        <label class="text-md font-bold mt-2" for="policy">Policy Type</label>
+        <select id="policy" required class="border-2 border-black">
+        <option>Select</option>
+        <option value="Health">Health</option>
+        <option value="Home">Home</option>
+        <option value="Vehicle">Vehicle</option>
+        <option value="Life">Life</option>
+        </select><br/>
+        <label class="text-md font-bold mt-2" for="number">Premium</label>
+        <input id="number" type="number" placeholder="Enter amount" required class="border-2 border-black"/><br/>
+        <label class="text-md font-bold mt-2" for="duration">Duration</label>
+        <input id="duration" type="number" placeholder="Enter Duration" required class="border-2 border-black"/><br/>
+
+        <label class="text-md font-bold mt-2" for="status">Request Type</label>
+        <select id="status" required class="border-2 border-black">
+        <option>Select</option>
+        <option>Active</option>
+        <option>Inactive</option>
+        </select>
+    <p class="errormsg" id="reqerror"></p>
+    <button class="bg-yellow-400 w-36 ml-16 rounded-2xl" type="submit">Submit</button>
+    <p id="successmsg"></p>
+  </form>
+  </div>
+
+    <div id="contact" class="bg-indigo-400 flex flex-col items-center pl-3 m-2  border-1 rounded-2xl">
+    <h1 class="text-xl font-bold mt-2">Edit Policies Data</h1>
+        <form class="w-72 block" id="form1">
+        <label class="text-md font-bold mt-2" for="name">Policy Id</label>
+        <input id="ID" type="text" placeholder="Enter Policy Id"  required class="border-2 border-black"/><br/>
+        <label class="text-md font-bold mt-2" for="name">Policy Name</label>
+        <input id="namep" type="text" placeholder="Enter Policy name"  required class="border-2 border-black"/><br/>
+        <label class="text-md font-bold mt-2" for="number">Premium</label>
+        <input id="numberp" type="number" placeholder="Enter amount" required class="border-2 border-black"/><br/>
+        <label class="text-md font-bold mt-2" for="duration">Duration</label>
+        <input id="durationp" type="number" placeholder="Enter Duration" required class="border-2 border-black"/><br/>
+        <label class="text-md font-bold mt-2" for="status">Request Type</label>
+        <select id="statusp" required class="border-2 border-black">
+        <option>Select</option>
+        <option>Active</option>
+        <option>Inactive</option>
+        </select>
+    <p class="errormsg" id="reqerror"></p>
+    <button class="bg-yellow-400 w-36 ml-16 rounded-2xl" type="submit">Edit</button>
+    <p id="successmsg"></p>
+  </form>
+    </div>
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
