@@ -1,0 +1,38 @@
+.desp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #eee8e2;
+    background-size: cover;
+    height: auto;
+    margin-top: 0;
+    padding: 0;
+    height: 20vh;
+    text-align: center;
+}
+h1{
+    font-size: 60px;
+    color: #7A003C;
+}
+.h2{
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+    .h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+    .h2 {
+        font-size: 18px;
+    }
+}
