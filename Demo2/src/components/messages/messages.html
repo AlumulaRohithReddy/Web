@@ -1,0 +1,12 @@
+<div class="flex flex-col items-center justify-center">
+    <h1>Available Messages</h1>
+    <button (click)="getData()">Click to See</button>
+    <div>
+        @for(s of strings;track s ){
+            <h2>{{s}}</h2>
+        }
+    </div>
+    <h2>Want to Add a Messages</h2>
+    <input type="text" [(ngModel)]="m"/>
+    <button (click)="add(m)">Add</button>
+</div>
