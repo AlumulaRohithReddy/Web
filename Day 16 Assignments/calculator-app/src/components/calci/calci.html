@@ -1,0 +1,16 @@
+<div class="p-6 w-1/2 h-86 border-1 rounded-xl shadow-sm shadow-red-800">
+<h1 class="ml-30 text-4xl w-64 text-center font-bold mb-10 bg-amber-300 p-2 rounded-xl">Calculator</h1>
+<label class="text-xl font-bold mr-auto ml-32">Enter Numbers</label>
+<input class="border-1 w-2/3 p-1 m-2 rounded-xl" type="number" [(ngModel)]="data.num1" placeholder="Enter number 1">
+<input class="border-1 w-2/3 p-1 m-2 rounded-xl" type="number" [(ngModel)]="data.num2" placeholder="Enter number 2">
+<br/>
+<div class="w-full flex flex-row justify-around items-center">
+<button class="border-1 rounded-xl w-1/7 cursor-pointer bg-amber-300" (click)="add()">Add</button>
+<button class="border-1 rounded-xl w-1/7 cursor-pointer bg-amber-300"(click)="sub()">Subtract</button>
+<button class="border-1 rounded-xl w-1/7 cursor-pointer bg-amber-300"(click)="multiply()">Multiply</button>
+<button class="border-1 rounded-xl w-1/7 cursor-pointer bg-amber-300" (click)="division()">Divide</button>
+<button class="border-1 rounded-xl w-1/7 cursor-pointer bg-amber-300"(click)="modulo()">Modulos</button>
+<button class="border-1 rounded-xl w-1/7 cursor-pointer bg-amber-300" (click)="power()">Power</button>
+</div>
+<h3 class="text-xl rounded-xl mt-5 border-2 w-1/2 p-2 text-center font-bold ">Result: {{ data.result }}</h3>
+</div>
