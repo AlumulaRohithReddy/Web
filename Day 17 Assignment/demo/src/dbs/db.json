@@ -1,0 +1,10 @@
+{
+  "users": [{
+    "id": "77fb",
+    "name": "d",
+    "email": "b",
+    "age": 3,
+    "role": "Developer",
+    "isActive": true
+  }]
+}
