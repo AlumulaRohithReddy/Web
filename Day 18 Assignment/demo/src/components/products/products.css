@@ -1,0 +1,9 @@
+span {
+  font-size: 32px;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.filled {
+  color: gold;
+}

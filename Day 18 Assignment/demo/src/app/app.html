@@ -1,0 +1,17 @@
+<app-child messagefromparent="Hello from Parent!" (add)="adddatafromchild($event)"></app-child>
+<router-outlet />
+<p>Data from Child: {{datafromchild}}</p>
+    <h2>Products Component</h2>
+    <p>This is the products component content.</p>
+<div class="flex w-full">
+@for (p of products; let i = $index; track i) {
+  <app-products
+    [product]="p.name"
+    [star]="p.rating"    
+    (ratingEvent)="receiveRating(i, $event)">
+  </app-products>
+
+  
+}
+</div>
+
