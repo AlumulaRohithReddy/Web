@@ -1,0 +1,32 @@
+﻿namespace SalaryCalculator
+{
+    public class Class1
+    {
+        public static double CalculateNetSalary(double basicSalary)
+        {
+            try
+            {
+                if (basicSalary <= 0)
+                {
+                    throw new ArgumentException("Salary must be greater than Zero.");
+                }
+
+                double hra = 0.20 * basicSalary;
+                double da = 0.10 * basicSalary;
+                double pf = 0;
+                if (basicSalary >= 15000)
+                {
+                    pf = 0.12 * basicSalary;
+                }
+
+                double ns = basicSalary + hra + da - pf;
+                return ns;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error in Salary Calculation: " + e.Message);
+            }
+        }
+    }
+}
+
