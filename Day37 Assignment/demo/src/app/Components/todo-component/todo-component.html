@@ -1,0 +1,165 @@
+<!-- NAVBAR -->
+<nav class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 shadow-lg">
+  <div class="flex justify-between items-center max-w-7xl mx-auto">
+    <h1 class="text-2xl font-bold tracking-wide">User Management</h1>
+
+    <div class="flex gap-6 text-lg">
+      <a href="#" class="hover:text-gray-200 transition">Home</a>
+      <a href="#Users" class="hover:text-gray-200 transition">Users</a>
+      <a href="#add" class="hover:text-gray-200 transition">Add</a>
+    </div>
+  </div>
+</nav>
+
+<div class="bg-gray-100 min-h-screen p-6">
+<a id="Users">
+  <h1  class="text-4xl font-bold text-center mb-10 text-gray-800">
+    User Dashboard
+  </h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+    @for(u of users;track $index){
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 hover:shadow-2xl transition duration-300">
+
+      <h2 class="text-xl font-semibold text-gray-900 mb-2">
+        {{ u.name }}
+      </h2>
+
+      <p class="text-gray-600 text-sm mb-1">
+        <span class="font-medium">Email:</span> {{ u.email }}
+      </p>
+
+      <p class="text-gray-600 text-sm mb-1">
+        <span class="font-medium">Age:</span> {{ u.age }}
+      </p>
+
+      <p class="text-gray-600 text-sm mb-3">
+        <span class="font-medium">Role:</span> {{ u.role }}
+      </p>
+
+      <span
+        class="inline-block px-3 py-1 text-sm font-semibold rounded-full mb-4"
+        [ngClass]="u.isActive ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'"
+      >
+        {{ u.isActive ? 'Active' : 'Inactive' }}
+      </span>
+
+      <div class="flex justify-between gap-3">
+        <button
+          (click)="delete(u.id)"
+          class="flex-1 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
+        >
+          Delete
+        </button>
+
+        <button
+          (click)="editUser(u)"
+          class="flex-1 bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition"
+        >
+          Edit
+        </button>
+      </div>
+
+    </div>
+    }
+
+  </div>
+</a>
+<a id="add">
+  <div  class="mt-16 flex justify-center">
+    <form
+      class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md"
+      (ngSubmit)="saveUser()"
+    >
+
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+        {{ data.id ? 'Update User' : 'Add New User' }}
+      </h2>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-1">Name</label>
+        <input
+          type="text"
+          [(ngModel)]="data.name"
+          name="name"
+          required
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-1">Email</label>
+        <input
+          type="email"
+          [(ngModel)]="data.email"
+          name="email"
+          required
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-1">Age</label>
+        <input
+          type="number"
+          [(ngModel)]="data.age"
+          name="age"
+          min="1"
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-1">Role</label>
+        <select
+          [(ngModel)]="data.role"
+          name="role"
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+        >
+          <option value="">Select role</option>
+          <option>Student</option>
+          <option>Developer</option>
+          <option>Designer</option>
+          <option>Tester</option>
+        </select>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-1">Status</label>
+        <div class="flex items-center gap-6">
+
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="isActive"
+              [value]="true"
+              [(ngModel)]="data.isActive"
+            />
+            <span class="text-green-600 font-medium">Active</span>
+          </label>
+
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="isActive"
+              [value]="false"
+              [(ngModel)]="data.isActive"
+            />
+            <span class="text-red-600 font-medium">Inactive</span>
+          </label>
+
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 rounded-lg font-semibold hover:opacity-90 transition"
+      >
+        {{ data.id ? 'Update User' : 'Save User' }}
+      </button>
+
+    </form>
+  </div>
+</a>
+</div>
